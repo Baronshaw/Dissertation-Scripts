@@ -1,0 +1,23 @@
+function countnumperquarter_test()
+
+serialdate = [datenum(2000,1:3,1)';...
+              datenum(2000,4:6,1)';datenum(2000,4:6,2)';...
+              datenum(2000,7:9,1)';...
+              datenum(2000,10:12,1)';datenum(2000,10:12,2)'];
+[numperquarter,lengthquarter] = countnumperquarter(serialdate);
+
+disp(['Q1:',num2str(numperquarter(1)),' Q2:',num2str(numperquarter(2)),...
+      ' Q3:',num2str(numperquarter(3)),' Q4:',num2str(numperquarter(4))]);
+disp(['Q1:',num2str(lengthquarter(1)),' Q2:',num2str(lengthquarter(2)),...
+      ' Q3:',num2str(lengthquarter(3)),' Q4:',num2str(lengthquarter(4))]);
+
+serialdate = [datenum(2001,1:3,1)';datenum(2001,4:6,1)'];
+[numperquarter,lengthquarter] = countnumperquarter(serialdate);
+
+disp(['Q1:',num2str(numperquarter(1)),' Q2:',num2str(numperquarter(2)),...
+      ' Q3:',num2str(numperquarter(3)),' Q4:',num2str(numperquarter(4))]);
+disp(['Q1:',num2str(lengthquarter(1)),' Q2:',num2str(lengthquarter(2)),...
+      ' Q3:',num2str(lengthquarter(3)),' Q4:',num2str(lengthquarter(4))]);
+
+serialdate = [datenum(2000,1:3,1)';datenum(2001,4:6,1)'];
+numperquarter = countnumperquarter(serialdate);
